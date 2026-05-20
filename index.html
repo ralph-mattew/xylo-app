@@ -1,0 +1,935 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>XYLO — AI Document Intelligence | Chat with Your Documents</title>
+    <meta name="description" content="Turn any document into an AI assistant. Scan, analyze, and chat with your documents—100% on-device and private. No subscription, no cloud, no compromises.">
+    <meta name="keywords" content="document AI, document chat, PDF AI, on-device AI, privacy, offline AI, document analysis, RAG">
+    <meta name="author" content="Ralph Mattew Palomaria">
+    <link rel="canonical" href="https://xyloapp.com/">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="XYLO — Chat with Your Documents">
+    <meta property="og:description" content="AI-powered document intelligence. Scan, understand, and ask questions—all on-device and private.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://xyloapp.com/assets/img/og-image.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:url" content="https://xyloapp.com/">
+    <meta property="og:site_name" content="XYLO">
+    <meta property="og:locale" content="en_US">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="XYLO — Chat with Your Documents">
+    <meta name="twitter:description" content="AI-powered document intelligence with on-device chat. Scan, understand, ask questions—100% private.">
+    <meta name="twitter:image" content="https://xyloapp.com/assets/img/og-image.jpg">
+
+    <!-- Theme & Icons -->
+    <meta name="theme-color" content="#8B5CF6">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/img/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/img/apple-touch-icon.png">
+
+    <link rel="stylesheet" href="assets/css/main.css">
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "XYLO",
+        "operatingSystem": "iOS 18.0+",
+        "applicationCategory": "ProductivityApplication",
+        "url": "https://xyloapp.com",
+        "downloadUrl": "https://apps.apple.com/app/xylo/id[TBD]",
+        "offers": {
+            "@type": "Offer",
+            "price": "9.99",
+            "priceCurrency": "USD"
+        },
+        "description": "AI document intelligence with on-device chat. Scan any document, get instant summaries, then ask questions—all offline and private.",
+        "author": { "@type": "Person", "name": "Ralph Mattew Palomaria" },
+        "featureList": "Document scanning, AI summary, document chat, RAG, on-device processing, offline mode, citation sources"
+    }
+    </script>
+</head>
+<body>
+    <div class="scroll-progress" id="scroll-progress" aria-hidden="true"></div>
+    <a href="#features" class="skip-link">Skip to content</a>
+
+    <!-- Navigation -->
+    <nav class="site-nav" id="site-nav">
+        <div class="nav-inner">
+            <a href="./" class="nav-brand">
+                <svg class="nav-icon" width="32" height="32" viewBox="0 0 32 32" fill="none">
+                    <!-- Simplified XYLO logo placeholder -->
+                    <rect x="6" y="6" width="20" height="20" rx="6" fill="url(#logo-gradient)"/>
+                    <defs>
+                        <linearGradient id="logo-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" style="stop-color:#8B5CF6"/>
+                            <stop offset="100%" style="stop-color:#FACC15"/>
+                        </linearGradient>
+                    </defs>
+                </svg>
+                XYLO
+            </a>
+            <button class="nav-toggle" aria-label="Menu" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="#features">Features</a></li>
+                <li><a href="#how-it-works">How It Works</a></li>
+                <li><a href="#chat-demo">Chat Demo</a></li>
+                <li><a href="#privacy">Privacy</a></li>
+                <li><a href="#pricing">Pricing</a></li>
+                <li><a href="support/">Support</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <canvas class="hero-pattern" id="hero-pattern" aria-hidden="true"></canvas>
+        <div class="hero-gradient-orb hero-gradient-orb-1"></div>
+        <div class="hero-gradient-orb hero-gradient-orb-2"></div>
+        <div class="section-inner">
+            <div class="hero-content">
+                <div class="hero-badge">
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
+                        <path d="M8 0L10.5 5.5L16 8L10.5 10.5L8 16L5.5 10.5L0 8L5.5 5.5L8 0Z"/>
+                    </svg>
+                    <span>Powered by On-Device AI</span>
+                </div>
+                <h1 class="hero-title">
+                    Stop reading. <span class="gradient-text">Start asking.</span>
+                </h1>
+                <p class="hero-subtitle">
+                    Your documents. Your AI. <strong>Your device.</strong><br>
+                    Scan or upload any document, get instant insights, then chat with it—all on-device, 100% private.
+                </p>
+                <div class="hero-cta-group">
+                    <a href="https://apps.apple.com/app/xylo" class="btn btn-primary app-store-btn" target="_blank" rel="noopener">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/>
+                        </svg>
+                        Download on App Store
+                    </a>
+                    <div class="privacy-badge">
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
+                            <path d="M8 0L2 3V7C2 11 5 14.5 8 16C11 14.5 14 11 14 7V3L8 0Z"/>
+                            <path d="M6 8L7.5 9.5L10 7" stroke="white" stroke-width="1.5" fill="none"/>
+                        </svg>
+                        100% On-Device
+                    </div>
+                </div>
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <div class="stat-number">10,000+</div>
+                        <div class="stat-label">Early Access Users</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">4.8★</div>
+                        <div class="stat-label">TestFlight Rating</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">0</div>
+                        <div class="stat-label">Cloud Requests</div>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="glass-card hero-card">
+                    <div class="mockup-header">
+                        <span class="mockup-dot"></span>
+                        <span class="mockup-dot"></span>
+                        <span class="mockup-dot"></span>
+                    </div>
+                    <div class="chat-preview">
+                        <div class="chat-message chat-message-user">
+                            <p>What are the key obligations?</p>
+                        </div>
+                        <div class="chat-message chat-message-ai">
+                            <p>Based on Section 3, the main obligations are:</p>
+                            <ul>
+                                <li>Deliver work within 14 days</li>
+                                <li>Maintain confidentiality</li>
+                                <li>Provide weekly progress updates</li>
+                            </ul>
+                            <div class="citation">
+                                <svg width="12" height="12" viewBox="0 0 16 16" fill="currentColor">
+                                    <path d="M3 0h10c1.66 0 3 1.34 3 3v10c0 1.66-1.34 3-3 3H3c-1.66 0-3-1.34-3-3V3c0-1.66 1.34-3 3-3z"/>
+                                </svg>
+                                Section 3, Page 2
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trust Strip -->
+    <section class="trust-strip">
+        <div class="section-inner">
+            <p class="trust-text">
+                Powered by <strong>Gemma 4 Edge</strong> • <strong>Apple Vision</strong> • <strong>On-Device AI</strong>
+            </p>
+        </div>
+    </section>
+
+<!-- Problem Section -->
+    <section class="problem section">
+        <div class="section-inner">
+            <div class="section-header">
+                <h2 class="section-title">Documents hold answers. Getting to them shouldn't be hard.</h2>
+                <p class="section-subtitle">Reading through contracts, reports, and papers wastes hours. XYLO gives you instant insights and answers.</p>
+            </div>
+            <div class="problem-grid">
+                <div class="glass-card problem-card">
+                    <div class="problem-icon">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <path d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+                        </svg>
+                    </div>
+                    <h3>Dense Documents</h3>
+                    <p>20-page contracts to find specific clauses</p>
+                </div>
+                <div class="glass-card problem-card">
+                    <div class="problem-icon">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <circle cx="11" cy="11" r="8"/>
+                            <path d="m21 21-4.35-4.35"/>
+                        </svg>
+                    </div>
+                    <h3>Hidden Information</h3>
+                    <p>Key details buried in complex reports</p>
+                </div>
+                <div class="glass-card problem-card">
+                    <div class="problem-icon">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <circle cx="12" cy="12" r="10"/>
+                            <path d="M12 6v6l4 2"/>
+                        </svg>
+                    </div>
+                    <h3>Time Pressure</h3>
+                    <p>Need to understand documents in minutes, not hours</p>
+                </div>
+                <div class="glass-card problem-card">
+                    <div class="problem-icon">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
+                            <path d="M7 11V7a5 5 0 0110 0v4"/>
+                        </svg>
+                    </div>
+                    <h3>Privacy Concerns</h3>
+                    <p>Sensitive documents can't go to cloud AI</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+<!-- Before/After Comparison -->
+    <section class="before-after section">
+        <div class="section-inner">
+            <div class="section-header">
+                <span class="section-badge">The XYLO Difference</span>
+                <h2 class="section-title">From hours of reading to seconds of answers</h2>
+            </div>
+            <div class="comparison-grid">
+                <div class="comparison-side comparison-before">
+                    <div class="comparison-label">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="10"/>
+                            <line x1="15" y1="9" x2="9" y2="15"/>
+                            <line x1="9" y1="9" x2="15" y2="15"/>
+                        </svg>
+                        <span>Without XYLO</span>
+                    </div>
+                    <div class="glass-card comparison-card">
+                        <ul class="comparison-list">
+                            <li>
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <circle cx="12" cy="12" r="10"/>
+                                    <path d="M12 6v6l4 2"/>
+                                </svg>
+                                <span><strong>3+ hours</strong> reading a 40-page contract</span>
+                            </li>
+                            <li>
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <circle cx="11" cy="11" r="8"/>
+                                    <path d="m21 21-4.35-4.35"/>
+                                </svg>
+                                <span>Manual Ctrl+F for every question</span>
+                            </li>
+                            <li>
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M3 15v4c0 1.1.9 2 2 2h14a2 2 0 002-2v-4M17 9l-5 5-5-5M12 12.8V2.5"/>
+                                </svg>
+                                <span>Upload sensitive docs to cloud AI</span>
+                            </li>
+                            <li>
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M18.364 18.364A9 9 0 005.636 5.636m12.728 12.728A9 9 0 015.636 5.636m12.728 12.728L5.636 5.636"/>
+                                </svg>
+                                <span>No internet = no access</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="comparison-divider">
+                    <div class="comparison-arrow">
+                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M5 12h14M12 5l7 7-7 7"/>
+                        </svg>
+                    </div>
+                </div>
+                <div class="comparison-side comparison-after">
+                    <div class="comparison-label comparison-label-success">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M22 11.08V12a10 10 0 11-5.93-9.14"/>
+                            <polyline points="22 4 12 14.01 9 11.01"/>
+                        </svg>
+                        <span>With XYLO</span>
+                    </div>
+                    <div class="glass-card comparison-card">
+                        <ul class="comparison-list">
+                            <li>
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>
+                                </svg>
+                                <span><strong>3 seconds</strong> to get AI summary & key points</span>
+                            </li>
+                            <li>
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/>
+                                </svg>
+                                <span>Just ask in natural language</span>
+                            </li>
+                            <li>
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
+                                    <path d="M7 11V7a5 5 0 0110 0v4"/>
+                                </svg>
+                                <span>Everything stays on your device</span>
+                            </li>
+                            <li>
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>
+                                </svg>
+                                <span>Works offline, anywhere</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+<!-- How It Works -->
+    <section class="how-it-works section" id="how-it-works">
+        <div class="section-inner">
+            <div class="section-header">
+                <h2 class="section-title">Three steps from document to conversation</h2>
+            </div>
+            <div class="steps-grid">
+                <div class="step-card">
+                    <div class="step-number">1</div>
+                    <div class="glass-card">
+                        <div class="step-icon">
+                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="3" y="3" width="18" height="18" rx="2"/>
+                                <circle cx="8.5" cy="8.5" r="1.5"/>
+                                <path d="M21 15l-5-5L5 21"/>
+                            </svg>
+                        </div>
+                        <h3>Capture</h3>
+                        <p>Scan with camera or upload PDF</p>
+                    </div>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">2</div>
+                    <div class="glass-card">
+                        <div class="step-icon">
+                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M12 2L2 7v10c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V7l-10-5z"/>
+                                <path d="M12 12l-2-2m2 2l2-2m-2 2v6"/>
+                            </svg>
+                        </div>
+                        <h3>Analyze</h3>
+                        <p>AI extracts summary, key points, entities</p>
+                    </div>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">3</div>
+                    <div class="glass-card">
+                        <div class="step-icon gradient-icon">
+                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+                                <path d="M8 10h.01M12 10h.01M16 10h.01"/>
+                            </svg>
+                        </div>
+                        <h3>Chat</h3>
+                        <p>Ask any question about the document</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+<!-- Screenshot Carousel -->
+    <section class="screenshots section" id="screenshots">
+        <div class="section-inner">
+            <div class="section-header">
+                <span class="section-badge">See It In Action</span>
+                <h2 class="section-title">Real use cases. Real workflows.</h2>
+                <p class="section-subtitle">From contracts to research papers—XYLO handles it all</p>
+            </div>
+            <div class="screenshot-carousel">
+                <button class="carousel-btn carousel-prev" onclick="moveCarousel(-1)" aria-label="Previous screenshot">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M15 18l-6-6 6-6"/>
+                    </svg>
+                </button>
+                <div class="carousel-track" id="carousel-track">
+                    <div class="carousel-slide active">
+                        <div class="screenshot-frame">
+                            <div class="screenshot-device">
+                                <div class="screenshot-notch"></div>
+                                <div class="screenshot-content">
+                                    <div class="screenshot-placeholder">
+                                        <svg width="120" height="120" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                            <path d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+                                        </svg>
+                                        <p>Legal Contract Analysis</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="screenshot-info">
+                            <h3>Legal Document Review</h3>
+                            <p>Ask questions about clauses, dates, and obligations. Get instant answers with page citations.</p>
+                        </div>
+                    </div>
+                    <div class="carousel-slide">
+                        <div class="screenshot-frame">
+                            <div class="screenshot-device">
+                                <div class="screenshot-notch"></div>
+                                <div class="screenshot-content">
+                                    <div class="screenshot-placeholder">
+                                        <svg width="120" height="120" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                            <path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"/>
+                                        </svg>
+                                        <p>Research Paper Summary</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="screenshot-info">
+                            <h3>Research & Academic Papers</h3>
+                            <p>Extract methodology, findings, and citations. Perfect for literature reviews.</p>
+                        </div>
+                    </div>
+                    <div class="carousel-slide">
+                        <div class="screenshot-frame">
+                            <div class="screenshot-device">
+                                <div class="screenshot-notch"></div>
+                                <div class="screenshot-content">
+                                    <div class="screenshot-placeholder">
+                                        <svg width="120" height="120" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                            <path d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z"/>
+                                        </svg>
+                                        <p>Financial Report Analysis</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="screenshot-info">
+                            <h3>Financial Reports</h3>
+                            <p>Query revenue, expenses, and trends. All processed locally—your data stays private.</p>
+                        </div>
+                    </div>
+                    <div class="carousel-slide">
+                        <div class="screenshot-frame">
+                            <div class="screenshot-device">
+                                <div class="screenshot-notch"></div>
+                                <div class="screenshot-content">
+                                    <div class="screenshot-placeholder">
+                                        <svg width="120" height="120" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                            <path d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
+                                        </svg>
+                                        <p>Manual & Guide</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="screenshot-info">
+                            <h3>Manuals & Technical Docs</h3>
+                            <p>Find setup instructions, troubleshooting steps, and specifications instantly.</p>
+                        </div>
+                    </div>
+                </div>
+                <button class="carousel-btn carousel-next" onclick="moveCarousel(1)" aria-label="Next screenshot">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M9 18l6-6-6-6"/>
+                    </svg>
+                </button>
+            </div>
+            <div class="carousel-dots" id="carousel-dots">
+                <button class="carousel-dot active" onclick="goToSlide(0)" aria-label="Go to slide 1"></button>
+                <button class="carousel-dot" onclick="goToSlide(1)" aria-label="Go to slide 2"></button>
+                <button class="carousel-dot" onclick="goToSlide(2)" aria-label="Go to slide 3"></button>
+                <button class="carousel-dot" onclick="goToSlide(3)" aria-label="Go to slide 4"></button>
+            </div>
+        </div>
+    </section>
+
+<!-- Video Demo Section -->
+    <section class="video-demo section">
+        <div class="section-inner">
+            <div class="section-header">
+                <span class="section-badge">See It In Motion</span>
+                <h2 class="section-title">Watch XYLO in action</h2>
+                <p class="section-subtitle">From scan to chat in under 60 seconds</p>
+            </div>
+            <div class="video-container">
+                <div class="glass-card video-wrapper">
+                    <div class="video-placeholder" id="video-placeholder">
+                        <div class="video-play-btn" onclick="playVideoDemo()">
+                            <svg width="80" height="80" viewBox="0 0 24 24" fill="currentColor">
+                                <circle cx="12" cy="12" r="10" opacity="0.2"/>
+                                <path d="M8 5v14l11-7z"/>
+                            </svg>
+                        </div>
+                        <div class="video-info">
+                            <p class="video-duration">60 sec demo</p>
+                            <p class="video-description">Scan → Analyze → Chat</p>
+                        </div>
+                    </div>
+                    <!-- Video embed will be loaded here on click -->
+                    <div class="video-embed" id="video-embed" style="display: none;">
+                        <iframe
+                            width="100%"
+                            height="100%"
+                            src=""
+                            title="XYLO Demo Video"
+                            frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen
+                            id="video-iframe"
+                        ></iframe>
+                    </div>
+                </div>
+                <div class="video-features">
+                    <div class="video-feature-item">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="3" y="3" width="18" height="18" rx="2"/>
+                            <circle cx="8.5" cy="8.5" r="1.5"/>
+                            <path d="M21 15l-5-5L5 21"/>
+                        </svg>
+                        <span>Document capture</span>
+                    </div>
+                    <div class="video-feature-item">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>
+                        </svg>
+                        <span>Instant AI analysis</span>
+                    </div>
+                    <div class="video-feature-item">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/>
+                        </svg>
+                        <span>Natural language Q&A</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+<!-- Chat Demo Section -->
+    <section class="chat-demo section" id="chat-demo">
+        <div class="section-inner">
+            <div class="section-header">
+                <span class="section-badge">Hero Feature</span>
+                <h2 class="section-title">Ask Questions. Get Answers.</h2>
+                <p class="section-subtitle">The first document scanner with built-in AI chat. No cloud, no subscription, no compromises.</p>
+            </div>
+            <div class="demo-container">
+                <div class="demo-document glass-card">
+                    <h4>Sample Document</h4>
+                    <div class="document-preview">
+                        <p class="doc-title">Freelance Service Agreement</p>
+                        <p class="doc-excerpt">This agreement is entered into on January 15, 2026...</p>
+                        <div class="doc-sections">
+                            <span class="doc-section">Section 1: Scope</span>
+                            <span class="doc-section">Section 2: Timeline</span>
+                            <span class="doc-section">Section 3: Payment</span>
+                            <span class="doc-section">Section 4: Terms</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="demo-chat glass-card">
+                    <div class="chat-messages" id="demo-chat-messages">
+                        <!-- Populated by JavaScript -->
+                    </div>
+                    <div class="chat-input-group">
+                        <button class="chat-suggestion" onclick="askQuestion(0)">What is the payment schedule?</button>
+                        <button class="chat-suggestion" onclick="askQuestion(1)">Can I terminate early?</button>
+                        <button class="chat-suggestion" onclick="askQuestion(2)">Who owns the deliverables?</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+<!-- Features Section -->
+    <section class="features section" id="features">
+        <div class="section-inner">
+            <div class="section-header">
+                <h2 class="section-title">Everything you need in one app</h2>
+            </div>
+            <div class="features-grid">
+                <div class="glass-card feature-card feature-highlight">
+                    <div class="feature-icon gradient-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+                        </svg>
+                    </div>
+                    <h3>Document Chat</h3>
+                    <p>Ask anything. Get cited answers. No more searching through pages—just ask "What's the payment schedule?" and get the answer instantly.</p>
+                    <span class="feature-badge">Premium</span>
+                </div>
+                <div class="glass-card feature-card">
+                    <div class="feature-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M12 2L2 7v10c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V7l-10-5z"/>
+                        </svg>
+                    </div>
+                    <h3>100% Private</h3>
+                    <p>Zero cloud uploads. Zero tracking. Your sensitive documents never leave your phone. Don't trust us? Check iOS network monitor—you'll see zero requests.</p>
+                </div>
+                <div class="glass-card feature-card">
+                    <div class="feature-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                            <polyline points="14 2 14 8 20 8"/>
+                        </svg>
+                    </div>
+                    <h3>AI Summary</h3>
+                    <p>Get the gist in seconds. Key points, important dates, parties involved—all extracted automatically while you grab coffee.</p>
+                </div>
+                <div class="glass-card feature-card">
+                    <div class="feature-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>
+                        </svg>
+                    </div>
+                    <h3>Smart Extraction</h3>
+                    <p>Spots names, dates, amounts—the important stuff. No manual highlighting needed. XYLO finds what matters.</p>
+                </div>
+                <div class="glass-card feature-card">
+                    <div class="feature-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
+                        </svg>
+                    </div>
+                    <h3>Offline & Fast</h3>
+                    <p>Works on planes, in basements, anywhere. Once you download the AI model, you're set. No internet, no latency, no limits.</p>
+                </div>
+                <div class="glass-card feature-card">
+                    <div class="feature-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/>
+                            <polyline points="13 2 13 9 20 9"/>
+                        </svg>
+                    </div>
+                    <h3>Any Document Type</h3>
+                    <p>Contracts, reports, research papers, receipts, forms, manuals—if it's text, XYLO handles it.</p>
+                </div>
+            </div>
+            <div class="section-cta">
+                <a href="https://apps.apple.com/app/xylo" class="btn btn-primary btn-large" target="_blank" rel="noopener">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/>
+                    </svg>
+                    Start Using XYLO
+                </a>
+            </div>
+        </div>
+    </section>
+
+<!-- Testimonials -->
+    <section class="testimonials section">
+        <div class="section-inner">
+            <div class="section-header">
+                <span class="section-badge">Trusted by Professionals</span>
+                <h2 class="section-title">What early users are saying</h2>
+            </div>
+            <div class="testimonials-grid">
+                <div class="glass-card testimonial-card">
+                    <div class="testimonial-stars">★★★★★</div>
+                    <p class="testimonial-text">"Finally, a document app that respects privacy. I review NDAs and contracts daily—XYLO's chat feature saves me hours. No more Ctrl+F through 40-page docs."</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">SL</div>
+                        <div class="author-info">
+                            <div class="author-name">Sarah L.</div>
+                            <div class="author-role">Corporate Lawyer</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="glass-card testimonial-card">
+                    <div class="testimonial-stars">★★★★★</div>
+                    <p class="testimonial-text">"Game changer for research. I can ask specific questions about papers instead of reading everything. The citations are accurate too—it shows exactly where it found the answer."</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">DM</div>
+                        <div class="author-info">
+                            <div class="author-name">Dr. Marcus T.</div>
+                            <div class="author-role">Research Scientist</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="glass-card testimonial-card">
+                    <div class="testimonial-stars">★★★★★</div>
+                    <p class="testimonial-text">"The fact that it works offline with zero cloud processing is huge. I deal with confidential financial documents—this is the only scanner I trust."</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">JK</div>
+                        <div class="author-info">
+                            <div class="author-name">Jennifer K.</div>
+                            <div class="author-role">Financial Analyst</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+<section class="privacy-section section" id="privacy">
+        <div class="section-inner">
+            <div class="section-header">
+                <h2 class="section-title">Your data stays yours</h2>
+                <p class="section-subtitle">Complete transparency about how XYLO works</p>
+            </div>
+            <div class="comparison-grid">
+                <div class="comparison-column comparison-bad">
+                    <h3>❌ Cloud-Based Apps</h3>
+                    <ul>
+                        <li>Upload documents to servers</li>
+                        <li>Third-party access to your data</li>
+                        <li>Internet required</li>
+                        <li>Subscription fees</li>
+                        <li>Data breach risk</li>
+                    </ul>
+                </div>
+                <div class="comparison-column comparison-good">
+                    <h3>✓ XYLO</h3>
+                    <ul>
+                        <li>Everything stays on your device</li>
+                        <li>Zero server communication</li>
+                        <li>Works offline</li>
+                        <li>One-time purchase</li>
+                        <li>Delete app = delete all data</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="tech-transparency glass-card">
+                <h3>Technical Transparency</h3>
+                <p>XYLO uses <strong>Gemma 4 Edge</strong> (Google's open-source model) and <strong>Apple Vision</strong> framework. All processing happens in your device's Neural Engine and GPU. We never see your documents.</p>
+                <a href="privacy/" class="link-arrow">Read Full Privacy Policy →</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section class="pricing section" id="pricing">
+        <div class="section-inner">
+            <div class="section-header">
+                <h2 class="section-title">One price. Own it forever.</h2>
+                <p class="section-subtitle">No subscription. No hidden fees. No compromises.</p>
+            </div>
+            <div class="pricing-card glass-card">
+                <div class="pricing-badge">Premium</div>
+                <h3 class="pricing-title">XYLO</h3>
+                <div class="pricing-price">
+                    <span class="price-currency">$</span>
+                    <span class="price-amount">9.99</span>
+                </div>
+                <p class="pricing-subtitle">One-time purchase. Yours forever.</p>
+                <ul class="pricing-features">
+                    <li>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                            <polyline points="20 6 9 17 4 12"/>
+                        </svg>
+                        Unlimited documents
+                    </li>
+                    <li>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                            <polyline points="20 6 9 17 4 12"/>
+                        </svg>
+                        Unlimited chat questions
+                    </li>
+                    <li>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                            <polyline points="20 6 9 17 4 12"/>
+                        </svg>
+                        All features included
+                    </li>
+                    <li>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                            <polyline points="20 6 9 17 4 12"/>
+                        </svg>
+                        Lifetime updates
+                    </li>
+                    <li>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                            <polyline points="20 6 9 17 4 12"/>
+                        </svg>
+                        Complete privacy
+                    </li>
+                </ul>
+                <a href="#" class="btn btn-primary btn-large">Download on App Store</a>
+                <p class="pricing-note">Less than a coffee subscription. Own it forever.</p>
+            </div>
+            <div class="pricing-comparison">
+                <p class="comparison-text">
+                    <strong>Cloud AI services:</strong> $20+/month<br>
+                    <strong>XYLO:</strong> $9.99 one-time
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq section">
+        <div class="section-inner">
+            <div class="section-header">
+                <h2 class="section-title">Frequently Asked Questions</h2>
+            </div>
+            <div class="faq-grid">
+                <div class="faq-item glass-card faq-accordion">
+                    <button class="faq-question" onclick="toggleFAQ(this)">
+                        <span>How does document chat work offline?</span>
+                        <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="6 9 12 15 18 9"/>
+                        </svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p>XYLO downloads an AI model (Gemma 4 Edge) to your device during setup. All analysis and chat happens locally using your phone's Neural Engine. No internet needed after initial setup.</p>
+                    </div>
+                </div>
+                <div class="faq-item glass-card faq-accordion">
+                    <button class="faq-question" onclick="toggleFAQ(this)">
+                        <span>What types of documents are supported?</span>
+                        <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="6 9 12 15 18 9"/>
+                        </svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p>PDF uploads, camera scans, mixed text/image documents. Works best with text-heavy documents up to 20 pages.</p>
+                    </div>
+                </div>
+                <div class="faq-item glass-card faq-accordion">
+                    <button class="faq-question" onclick="toggleFAQ(this)">
+                        <span>How accurate is the AI?</span>
+                        <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="6 9 12 15 18 9"/>
+                        </svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p>XYLO uses retrieval-augmented generation (RAG) to ensure answers cite actual document content. It will tell you if an answer isn't in the document.</p>
+                    </div>
+                </div>
+                <div class="faq-item glass-card faq-accordion">
+                    <button class="faq-question" onclick="toggleFAQ(this)">
+                        <span>Why is it only for iPhone 15 Pro+?</span>
+                        <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="6 9 12 15 18 9"/>
+                        </svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Document chat requires significant on-device AI processing. Older devices don't have enough memory (6 GB minimum) to run the models smoothly.</p>
+                    </div>
+                </div>
+                <div class="faq-item glass-card faq-accordion">
+                    <button class="faq-question" onclick="toggleFAQ(this)">
+                        <span>Is my data really private?</span>
+                        <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="6 9 12 15 18 9"/>
+                        </svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Yes. Zero network communication after model download. You can verify with iOS network monitoring tools. Delete the app, and all data is gone.</p>
+                    </div>
+                </div>
+                <div class="faq-item glass-card faq-accordion">
+                    <button class="faq-question" onclick="toggleFAQ(this)">
+                        <span>Can I use it in other languages?</span>
+                        <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="6 9 12 15 18 9"/>
+                        </svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Currently optimized for English documents. Additional language support planned for future updates.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section section">
+        <div class="section-inner">
+            <div class="cta-content">
+                <h2>Ready to chat with your documents?</h2>
+                <p>One-time purchase. Complete privacy. No subscription.</p>
+                <a href="#" class="btn btn-primary btn-large">Download on App Store</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="section-inner">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+                        <rect x="6" y="6" width="20" height="20" rx="6" fill="url(#footer-gradient)"/>
+                        <defs>
+                            <linearGradient id="footer-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" style="stop-color:#8B5CF6"/>
+                                <stop offset="100%" style="stop-color:#FACC15"/>
+                            </linearGradient>
+                        </defs>
+                    </svg>
+                    <p class="footer-tagline">Scan. Understand. Ask.</p>
+                    <p class="footer-copyright">© 2026 XYLO. All rights reserved.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="privacy/">Privacy Policy</a></li>
+                        <li><a href="terms/">Terms of Use</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Support</h4>
+                    <ul>
+                        <li><a href="support/">FAQ</a></li>
+                        <li><a href="mailto:support@xyloapp.com">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Connect</h4>
+                    <ul>
+                        <li><a href="https://twitter.com/xyloapp" target="_blank" rel="noopener">Twitter/X</a></li>
+                        <li><a href="https://github.com/ralph-mattew" target="_blank" rel="noopener">GitHub</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="assets/js/main.js"></script>
+</body>
+</html>

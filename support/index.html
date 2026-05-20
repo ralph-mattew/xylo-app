@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Support — XYLO</title>
+    <link rel="stylesheet" href="../assets/css/main.css">
+    <style>
+        .support-content { max-width: 900px; margin: 0 auto; padding: 2rem 1rem; }
+        .support-content h1 { margin-bottom: 1rem; text-align: center; }
+        .support-content h2 { margin-top: 3rem; margin-bottom: 1rem; color: var(--xylo-primary); }
+        .support-content p, .support-content li { line-height: 1.8; margin-bottom: 1rem; }
+        .support-content ul { margin-left: 2rem; }
+        .back-link { display: inline-block; margin-bottom: 2rem; color: var(--xylo-primary); text-decoration: none; font-weight: 600; }
+        .back-link:hover { text-decoration: underline; }
+        .faq-item { background: var(--xylo-card); padding: 1.5rem; margin-bottom: 1rem; border-radius: var(--radius-lg); border: 1px solid rgba(139, 92, 246, 0.1); }
+        .faq-question { font-weight: 600; color: var(--xylo-text); margin-bottom: 0.5rem; }
+        .contact-box { background: linear-gradient(135deg, var(--xylo-primary), var(--xylo-accent)); color: white; padding: 2rem; border-radius: var(--radius-lg); text-align: center; margin-top: 3rem; }
+        .contact-box a { color: white; text-decoration: underline; }
+    </style>
+</head>
+<body>
+    <div class="support-content">
+        <a href="../" class="back-link">← Back to Home</a>
+        
+        <h1>Support & FAQ</h1>
+        <p style="text-align: center; color: var(--xylo-text-secondary); margin-bottom: 3rem;">Get help with XYLO</p>
+        
+        <h2>Getting Started</h2>
+        
+        <div class="faq-item">
+            <div class="faq-question">What devices are supported?</div>
+            <p>XYLO requires iOS 18.0+ and iPhone 15 Pro or newer. This is due to the memory requirements (6 GB minimum) for running on-device AI models.</p>
+        </div>
+        
+        <div class="faq-item">
+            <div class="faq-question">How much storage do I need?</div>
+            <p>You'll need approximately 4-6 GB for the initial AI model download, plus additional storage for your documents and analysis history.</p>
+        </div>
+        
+        <div class="faq-item">
+            <div class="faq-question">Can I use XYLO offline?</div>
+            <p>Yes! After the initial model download, XYLO works completely offline. No internet connection required for scanning, analysis, or chat.</p>
+        </div>
+        
+        <h2>Using Document Chat</h2>
+        
+        <div class="faq-item">
+            <div class="faq-question">How accurate are the AI answers?</div>
+            <p>XYLO uses retrieval-augmented generation (RAG) to ensure answers are grounded in your document content. All answers include citations showing which part of the document was used. However, always verify critical information.</p>
+        </div>
+        
+        <div class="faq-item">
+            <div class="faq-question">What types of questions can I ask?</div>
+            <p>You can ask about specific information ("What is the payment schedule?"), request summaries ("Summarize Section 3"), or ask for clarification ("What does this clause mean?"). The AI works best with specific, document-related questions.</p>
+        </div>
+        
+        <div class="faq-item">
+            <div class="faq-question">Can I ask questions in other languages?</div>
+            <p>Currently, XYLO is optimized for English documents and questions. Additional language support is planned for future updates.</p>
+        </div>
+        
+        <h2>Documents</h2>
+        
+        <div class="faq-item">
+            <div class="faq-question">What document formats are supported?</div>
+            <p>XYLO supports camera-scanned documents and PDF uploads. It works best with text-heavy documents up to 20 pages.</p>
+        </div>
+        
+        <div class="faq-item">
+            <div class="faq-question">Can I scan handwritten documents?</div>
+            <p>XYLO uses Apple's Vision OCR, which has limited handwriting recognition. Typed or printed text works best.</p>
+        </div>
+        
+        <div class="faq-item">
+            <div class="faq-question">Where are my documents stored?</div>
+            <p>All documents and analysis results are stored locally on your device using iOS secure storage. They are never uploaded to the cloud and are deleted when you uninstall the app.</p>
+        </div>
+        
+        <h2>Privacy & Security</h2>
+        
+        <div class="faq-item">
+            <div class="faq-question">Is my data really private?</div>
+            <p>Yes. XYLO processes everything on your device. After the initial AI model download, there is zero network communication. You can verify this with iOS network monitoring tools.</p>
+        </div>
+        
+        <div class="faq-item">
+            <div class="faq-question">Can I use XYLO for sensitive documents?</div>
+            <p>Yes. Since everything is processed on-device with no cloud communication, XYLO is suitable for confidential documents like contracts, medical records, or financial statements.</p>
+        </div>
+        
+        <h2>Troubleshooting</h2>
+        
+        <div class="faq-item">
+            <div class="faq-question">The app is slow or crashes</div>
+            <p>Try these steps:</p>
+            <ul>
+                <li>Close other apps to free up memory</li>
+                <li>Restart your iPhone</li>
+                <li>Ensure you have at least 2 GB of free storage</li>
+                <li>Update to the latest version of XYLO and iOS</li>
+            </ul>
+        </div>
+        
+        <div class="faq-item">
+            <div class="faq-question">Model download failed</div>
+            <p>Ensure you have a stable Wi-Fi connection and at least 6 GB of free storage. The download may take 10-30 minutes depending on your connection speed. You can retry from Settings.</p>
+        </div>
+        
+        <div class="faq-item">
+            <div class="faq-question">Chat answers seem incorrect</div>
+            <p>If the AI is giving irrelevant answers, try:</p>
+            <ul>
+                <li>Asking more specific questions</li>
+                <li>Referencing section numbers or page numbers</li>
+                <li>Breaking complex questions into simpler parts</li>
+                <li>Checking that your document scan quality is good (re-scan if blurry)</li>
+            </ul>
+        </div>
+        
+        <h2>Billing & Refunds</h2>
+        
+        <div class="faq-item">
+            <div class="faq-question">How do I request a refund?</div>
+            <p>Refunds are handled through the App Store. Visit <a href="https://support.apple.com/billing" target="_blank" rel="noopener">Apple Support</a> or use the "Report a Problem" option in your App Store purchase history.</p>
+        </div>
+        
+        <div class="faq-item">
+            <div class="faq-question">Will there be subscription fees in the future?</div>
+            <p>No. XYLO is a one-time purchase with lifetime access. There will never be subscription fees or feature paywalls.</p>
+        </div>
+        
+        <div class="contact-box">
+            <h2 style="color: white; margin-top: 0;">Still Need Help?</h2>
+            <p>Email us at <a href="mailto:support@xyloapp.com">support@xyloapp.com</a></p>
+            <p style="margin-bottom: 0; font-size: 0.875rem; opacity: 0.9;">We typically respond within 24-48 hours.</p>
+        </div>
+        
+        <p style="text-align: center; margin-top: 3rem; padding-top: 2rem; border-top: 1px solid var(--xylo-text-secondary); opacity: 0.6;">
+            <strong>XYLO</strong> — Scan. Understand. Ask.
+        </p>
+    </div>
+</body>
+</html>
