@@ -4,72 +4,269 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Privacy Policy — XYLO</title>
+    <meta name="description" content="XYLO Privacy Policy. 100% on-device document intelligence — no data collection, no tracking, no cloud processing.">
+    <meta name="theme-color" content="#8B5CF6">
     <link rel="stylesheet" href="../assets/css/main.css">
     <style>
-        .legal-content { max-width: 800px; margin: 0 auto; padding: 2rem 1rem; }
-        .legal-content h1 { margin-bottom: 1rem; }
-        .legal-content h2 { margin-top: 2rem; margin-bottom: 1rem; }
-        .legal-content p, .legal-content li { line-height: 1.8; margin-bottom: 1rem; }
-        .legal-content ul { margin-left: 2rem; }
-        .back-link { display: inline-block; margin-bottom: 2rem; color: var(--xylo-primary); text-decoration: none; font-weight: 600; }
-        .back-link:hover { text-decoration: underline; }
+        .legal-hero {
+            background: linear-gradient(135deg, rgba(139, 92, 246, 0.08), rgba(250, 204, 21, 0.04));
+            padding: 80px 0 40px;
+            text-align: center;
+        }
+        .legal-hero h1 {
+            font-size: clamp(2rem, 5vw, 3rem);
+            margin-bottom: 0.75rem;
+        }
+        .legal-hero .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 6px 16px;
+            background: rgba(16, 185, 129, 0.1);
+            border: 1px solid rgba(16, 185, 129, 0.2);
+            border-radius: 9999px;
+            color: var(--xylo-success);
+            font-size: 0.875rem;
+            font-weight: 600;
+            margin-bottom: 24px;
+        }
+        .legal-hero .updated {
+            font-size: 0.9rem;
+            color: var(--xylo-text-secondary);
+        }
+        .legal-body {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 3rem 1.5rem 4rem;
+        }
+        .legal-section {
+            margin-bottom: 2.5rem;
+        }
+        .legal-section h2 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--xylo-text);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .legal-section h2 .icon {
+            width: 32px;
+            height: 32px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(139, 92, 246, 0.1);
+            border-radius: 8px;
+            color: var(--xylo-primary);
+            flex-shrink: 0;
+        }
+        .legal-section p, .legal-section li {
+            line-height: 1.8;
+            margin-bottom: 0.75rem;
+            color: var(--xylo-text);
+            opacity: 0.85;
+        }
+        .legal-section ul {
+            margin-left: 1.5rem;
+            margin-bottom: 1rem;
+        }
+        .highlight-card {
+            background: rgba(139, 92, 246, 0.06);
+            border: 1px solid rgba(139, 92, 246, 0.12);
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+        }
+        .highlight-card p {
+            margin-bottom: 0;
+            font-weight: 500;
+        }
+        .zero-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 12px;
+            margin: 1.5rem 0;
+        }
+        .zero-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 16px;
+            background: rgba(16, 185, 129, 0.06);
+            border: 1px solid rgba(16, 185, 129, 0.12);
+            border-radius: 10px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: var(--xylo-text);
+        }
+        .zero-item svg {
+            color: var(--xylo-success);
+            flex-shrink: 0;
+        }
+        .legal-footer {
+            text-align: center;
+            padding: 2rem 1.5rem;
+            border-top: 1px solid rgba(139, 92, 246, 0.1);
+            margin-top: 2rem;
+            color: var(--xylo-text-secondary);
+            font-size: 0.875rem;
+        }
+        .legal-footer a {
+            color: var(--xylo-primary);
+            text-decoration: none;
+        }
     </style>
 </head>
 <body>
-    <div class="legal-content">
-        <a href="../" class="back-link">← Back to Home</a>
-        
-        <h1>Privacy Policy</h1>
-        <p><strong>Last Updated:</strong> May 20, 2026</p>
-        
-        <h2>Our Commitment</h2>
-        <p>XYLO is built with privacy as a core principle. We believe your documents are yours alone.</p>
-        
-        <h2>Data Collection: None</h2>
-        <p>XYLO does not collect, store, or transmit any of your data to our servers or third parties. Period.</p>
-        
-        <h2>How XYLO Works</h2>
-        <ul>
-            <li><strong>On-Device Processing:</strong> All document analysis, AI processing, and chat conversations happen entirely on your device using local AI models.</li>
-            <li><strong>No Cloud Communication:</strong> After the initial AI model download, XYLO operates completely offline. You can verify this with iOS network monitoring tools.</li>
-            <li><strong>No Analytics:</strong> We don't use analytics services, tracking pixels, or any third-party data collection tools.</li>
-            <li><strong>No User Accounts:</strong> XYLO doesn't require account creation, login, or any personal information.</li>
-        </ul>
-        
-        <h2>Data Storage</h2>
-        <p>All documents and analysis results are stored locally on your device using iOS secure storage (SwiftData). This data is:</p>
-        <ul>
-            <li>Protected by your device's encryption</li>
-            <li>Never backed up to iCloud (by design)</li>
-            <li>Completely deleted when you uninstall the app</li>
-        </ul>
-        
-        <h2>App Permissions</h2>
-        <p>XYLO requests the following permissions:</p>
-        <ul>
-            <li><strong>Camera:</strong> Only used for document scanning. Photos are processed locally and not saved to your photo library unless you explicitly save them.</li>
-            <li><strong>Storage:</strong> To save analysis results on your device.</li>
-        </ul>
-        
-        <h2>AI Model Download</h2>
-        <p>On first launch, XYLO downloads an AI model (Gemma 4 Edge, 3.5-5.4 GB) from Hugging Face (huggingface.co). This is the only network communication the app performs. The download is secured over HTTPS and contains no user data.</p>
-        
-        <h2>Third-Party Services</h2>
-        <p>XYLO does not integrate any third-party services, SDKs, or analytics tools.</p>
-        
-        <h2>Children's Privacy</h2>
-        <p>XYLO does not collect any data from anyone, including children under 13.</p>
-        
-        <h2>Changes to This Policy</h2>
-        <p>If we make changes to this privacy policy, we will update it here and change the "Last Updated" date. Since XYLO doesn't collect data, changes will only clarify our practices, not introduce new data collection.</p>
-        
-        <h2>Contact</h2>
-        <p>Questions about privacy? Email us at <a href="mailto:privacy@xyloapp.com">privacy@xyloapp.com</a></p>
-        
-        <p style="margin-top: 3rem; padding-top: 2rem; border-top: 1px solid var(--xylo-text-secondary); opacity: 0.6;">
-            <strong>XYLO</strong> — Scan. Understand. Ask.<br>
-            Built by <a href="https://makata.ai" target="_blank" rel="noopener">Makata AI</a>
-        </p>
+    <!-- Navigation -->
+    <nav class="site-nav">
+        <div class="nav-inner">
+            <a href="../" class="nav-brand">
+                <svg class="nav-icon" width="32" height="32" viewBox="0 0 32 32" fill="none">
+                    <rect x="6" y="6" width="20" height="20" rx="6" fill="url(#lg)"/>
+                    <defs><linearGradient id="lg" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:#8B5CF6"/><stop offset="100%" style="stop-color:#FACC15"/></linearGradient></defs>
+                </svg>
+                XYLO
+            </a>
+            <ul class="nav-links">
+                <li><a href="../">Home</a></li>
+                <li><a href="../support/">Support</a></li>
+                <li><a href="../terms/">Terms</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <div class="legal-hero">
+        <div class="section-inner">
+            <div class="badge">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2L2 7v10c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V7l-10-5z"/></svg>
+                Zero Data Collection
+            </div>
+            <h1>Privacy Policy</h1>
+            <p class="updated">Last Updated: May 20, 2026</p>
+        </div>
+    </div>
+
+    <!-- Content -->
+    <div class="legal-body">
+        <div class="highlight-card">
+            <p>XYLO does not collect, store, or transmit any of your data to our servers or third parties. Everything stays on your device.</p>
+        </div>
+
+        <div class="legal-section">
+            <h2>
+                <span class="icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M15 9l-6 6M9 9l6 6"/></svg></span>
+                Data Collection: None
+            </h2>
+            <div class="zero-grid">
+                <div class="zero-item">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                    No personal info
+                </div>
+                <div class="zero-item">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                    No analytics
+                </div>
+                <div class="zero-item">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                    No crash reports
+                </div>
+                <div class="zero-item">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                    No device IDs
+                </div>
+                <div class="zero-item">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                    No tracking
+                </div>
+                <div class="zero-item">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                    No accounts
+                </div>
+            </div>
+        </div>
+
+        <div class="legal-section">
+            <h2>
+                <span class="icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg></span>
+                On-Device Processing
+            </h2>
+            <p>All features of XYLO operate entirely on your device:</p>
+            <ul>
+                <li><strong>Document scanning</strong> uses Apple's Vision framework (on-device OCR)</li>
+                <li><strong>AI summarization</strong> uses a locally stored open-source model (Gemma 4 Edge) running via llama.cpp</li>
+                <li><strong>Document chat</strong> uses Apple's NLEmbedding for on-device semantic search and the same Gemma model for generating answers</li>
+                <li><strong>Document analysis</strong> uses Apple's NaturalLanguage framework for keyword extraction, sentiment analysis, and entity recognition</li>
+            </ul>
+            <p>No text, images, or analysis results are ever transmitted to any server, cloud service, or third party.</p>
+        </div>
+
+        <div class="legal-section">
+            <h2>
+                <span class="icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg></span>
+                Data Storage
+            </h2>
+            <p>All data generated by the App is stored locally on your device:</p>
+            <ul>
+                <li><strong>Analysis results</strong> stored in the app's local SwiftData database</li>
+                <li><strong>Source files</strong> stored in the app's local Documents directory</li>
+                <li><strong>AI models</strong> downloaded once from Hugging Face and stored locally</li>
+                <li><strong>User preferences</strong> stored in local UserDefaults</li>
+                <li><strong>Chat conversations</strong> stored in-memory during sessions, optionally persisted locally</li>
+            </ul>
+            <p>You can delete all stored data at any time from Settings. Uninstalling the App permanently deletes all locally stored data.</p>
+        </div>
+
+        <div class="legal-section">
+            <h2>
+                <span class="icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></span>
+                Network Usage
+            </h2>
+            <p>The App makes network requests only for one purpose:</p>
+            <div class="highlight-card">
+                <p><strong>One-time AI model download</strong> — When you first set up the App, it downloads AI model files from Hugging Face (huggingface.co). This is the only network request the App ever makes. After download, no further network access is required.</p>
+            </div>
+        </div>
+
+        <div class="legal-section">
+            <h2>
+                <span class="icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M23 19a2 2 0 01-2 2H3a2 2 0 01-2-2V8a2 2 0 012-2h4l2-3h6l2 3h4a2 2 0 012 2z"/><circle cx="12" cy="13" r="4"/></svg></span>
+                Camera Permission
+            </h2>
+            <p>Camera is used solely for capturing document images for OCR text extraction. Photos are processed on-device and stored locally. They are never uploaded or transmitted. You can revoke camera permissions at any time in your device's Settings.</p>
+        </div>
+
+        <div class="legal-section">
+            <h2>
+                <span class="icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="8.5" cy="7" r="4"/><path d="M20 8v6M23 11h-6"/></svg></span>
+                Third-Party Services
+            </h2>
+            <p>The App does not integrate with any third-party analytics, advertising, or tracking services. The App does not contain ads. The only third-party interaction is the initial download of open-source AI models from Hugging Face.</p>
+        </div>
+
+        <div class="legal-section">
+            <h2>
+                <span class="icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7v10c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V7l-10-5z"/></svg></span>
+                Children's Privacy
+            </h2>
+            <p>The App does not collect any personal information from anyone, including children under 13. The App is rated 4+ and is safe for all ages.</p>
+        </div>
+
+        <div class="legal-section">
+            <h2>
+                <span class="icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></span>
+                Contact
+            </h2>
+            <p>Questions about this Privacy Policy? Email us at <a href="mailto:feedback@makata.ai" style="color: var(--xylo-primary); text-decoration: none; font-weight: 600;">feedback@makata.ai</a></p>
+        </div>
+    </div>
+
+    <div class="legal-footer">
+        <strong>XYLO</strong> — Scan. Understand. Ask.<br>
+        <a href="../">Home</a> &middot; <a href="../terms/">Terms of Use</a> &middot; <a href="../support/">Support</a><br><br>
+        Built by <a href="https://github.com/ralph-mattew" target="_blank" rel="noopener">Ralph Mattew Palomaria</a>
     </div>
 </body>
 </html>
