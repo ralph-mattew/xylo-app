@@ -1938,7 +1938,7 @@ h3, .step-card h3, .feature-card h3 {
 /* Hero Mockup Styling */
 .hero-mockup-container {
   width: 100%;
-  max-width: 600px;
+  max-width: 450px;
   margin: 0 auto;
   perspective: 1000px;
 }
@@ -1949,6 +1949,8 @@ h3, .step-card h3, .feature-card h3 {
   filter: drop-shadow(0 20px 60px rgba(250, 204, 21, 0.3));
   animation: float 6s ease-in-out infinite;
   border-radius: 20px;
+  max-height: 600px;
+  object-fit: contain;
 }
 
 @keyframes float {
@@ -1963,13 +1965,15 @@ h3, .step-card h3, .feature-card h3 {
 /* Mockup Section Styling */
 .mockup-showcase {
   width: 100%;
-  max-width: 500px;
+  max-width: 400px;
   margin: 0 auto;
 }
 
 .mockup-showcase img {
   width: 100%;
   height: auto;
+  max-height: 700px;
+  object-fit: contain;
   border-radius: 16px;
   box-shadow: 0 20px 60px rgba(139, 92, 246, 0.3);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -1988,6 +1992,16 @@ h3, .step-card h3, .feature-card h3 {
   
   .hero-mockup-image {
     filter: drop-shadow(0 10px 30px rgba(250, 204, 21, 0.2));
+    max-height: 500px;
+  }
+  
+  .mockup-showcase {
+    max-width: 100%;
+    padding: 0 1rem;
+  }
+  
+  .mockup-showcase img {
+    max-height: 500px;
   }
 }
 
@@ -2043,4 +2057,86 @@ h3, .step-card h3, .feature-card h3 {
   text-transform: uppercase;
   font-size: 0.875rem;
   letter-spacing: 0.1em;
+}
+
+/* Optimized Section Spacing */
+.output-formats,
+.upload-flow,
+.chat-deepdive,
+.privacy-section {
+  padding: 80px 0;
+}
+
+/* Balanced Typography for Feature Sections */
+.output-formats h3,
+.upload-flow h3,
+.chat-deepdive h3,
+.privacy-section h3 {
+  font-size: clamp(1.25rem, 3vw, 1.5rem);
+  line-height: 1.3;
+  font-weight: 600;
+}
+
+.output-formats p,
+.upload-flow p,
+.chat-deepdive p {
+  font-size: clamp(0.95rem, 2vw, 1.05rem);
+  line-height: 1.7;
+}
+
+/* Better Grid Balance */
+.output-formats > .section-inner > div[style*="grid"],
+.upload-flow > .section-inner > div[style*="grid"],
+.chat-deepdive > .section-inner > div[style*="grid"],
+.privacy-section > .section-inner > div[style*="grid"] {
+  align-items: center;
+  gap: 2.5rem !important;
+}
+
+/* Prevent Mockups from Being Too Large */
+.mockup-showcase {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Better Visual Hierarchy */
+.section-badge {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  border-radius: 50px;
+  font-size: 0.8rem;
+  margin-bottom: 1rem;
+}
+
+@media (max-width: 968px) {
+  .output-formats,
+  .upload-flow,
+  .chat-deepdive,
+  .privacy-section {
+    padding: 60px 0;
+  }
+  
+  /* Better mobile spacing */
+  .output-formats > .section-inner > div[style*="grid"],
+  .upload-flow > .section-inner > div[style*="grid"],
+  .chat-deepdive > .section-inner > div[style*="grid"],
+  .privacy-section > .section-inner > div[style*="grid"] {
+    gap: 2rem !important;
+  }
+}
+
+@media (max-width: 640px) {
+  /* Even smaller on mobile */
+  .mockup-showcase {
+    max-width: 280px !important;
+  }
+  
+  .mockup-showcase img {
+    max-height: 400px !important;
+  }
+  
+  .hero-mockup-image {
+    max-height: 400px !important;
+  }
 }
