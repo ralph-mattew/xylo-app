@@ -2131,12 +2131,62 @@ h3, .step-card h3, .feature-card h3 {
   .mockup-showcase {
     max-width: 280px !important;
   }
-  
+
   .mockup-showcase img {
     max-height: 400px !important;
   }
-  
+
   .hero-mockup-image {
     max-height: 400px !important;
+  }
+}
+
+/* ===============================================
+   MOBILE: Inline Grid Overrides
+   Sections using inline style="grid-template-columns"
+   need !important to collapse on mobile.
+   =============================================== */
+
+@media (max-width: 968px) {
+  /* iPad Showcase: 3-col → 1-col */
+  .ipad-showcase > .section-inner > div[style*="grid-template-columns"] {
+    grid-template-columns: 1fr !important;
+    gap: 1.5rem !important;
+    max-width: 500px !important;
+    margin: 0 auto !important;
+  }
+
+  /* Privacy visual showcase: 2-col → 1-col */
+  .privacy-section > .section-inner > div[style*="grid-template-columns"] {
+    grid-template-columns: 1fr !important;
+    gap: 2rem !important;
+  }
+
+  /* Privacy comparison grid: inline 2-col → 1-col */
+  .privacy-section .comparison-grid[style] {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* Device compatibility grids inside glass-card */
+  .hardware-requirements .glass-card div[style*="grid-template-columns"] {
+    grid-template-columns: 1fr !important;
+    gap: 1rem !important;
+  }
+}
+
+@media (max-width: 640px) {
+  /* iPad showcase even narrower */
+  .ipad-showcase > .section-inner > div[style*="grid-template-columns"] {
+    max-width: 320px !important;
+  }
+
+  /* Pricing card: tighten padding */
+  .pricing-card {
+    padding: var(--spacing-lg) !important;
+  }
+
+  /* FAQ grid: single column on small screens */
+  .faq-grid {
+    grid-template-columns: 1fr !important;
   }
 }
