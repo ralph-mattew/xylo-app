@@ -278,6 +278,8 @@ strong {
 .nav-icon {
   width: 32px;
   height: 32px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(139, 92, 246, 0.3);
 }
 
 .nav-toggle {
@@ -1493,6 +1495,13 @@ strong {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.screenshot-content img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 30px;
 }
 
 .screenshot-placeholder {
