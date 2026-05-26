@@ -6,13 +6,14 @@ Marketing site and legal pages for **XYLO: AI Document Intelligence**
 
 ## What is XYLO?
 
-XYLO is a premium on-device document intelligence app for iPhone. Scan or upload any document, get an instant AI summary, then ask follow-up questions — all offline and 100% private.
+XYLO is a free on-device document intelligence app for iPhone. Scan documents, upload files, or record audio — get instant AI summaries, then ask follow-up questions. All offline and 100% private.
 
 **Tagline:** Scan. Understand. Ask.
 
-- One-time paid app (no subscription)
+- Free on the App Store — no subscriptions, no in-app purchases
 - English-only
 - Document Chat as the hero feature (on-device RAG)
+- Audio recording with on-device transcription
 - 100% private — no cloud, no tracking, no accounts
 - iPhone 14 or newer (6 GB RAM minimum)
 - iOS 26.0+
@@ -21,7 +22,7 @@ XYLO is a premium on-device document intelligence app for iPhone. Scan or upload
 
 | Page | Path | Description |
 |------|------|-------------|
-| Landing Page | `/` | Marketing site with features, demo, pricing |
+| Landing Page | `/` | Marketing site with features, demo, screenshots |
 | Privacy Policy | `/privacy` | Data handling and privacy practices |
 | Terms of Use | `/terms` | Usage terms and disclaimers |
 | Support & FAQ | `/support` | Device requirements, troubleshooting, FAQ |
