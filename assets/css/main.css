@@ -2623,13 +2623,17 @@ h3, .step-card h3, .feature-card h3 {
   bottom: 0;
   left: 0;
   right: 0;
-  z-index: 999;
+  z-index: 9998;
+  -webkit-transform: translateY(100%);
   transform: translateY(100%);
+  -webkit-transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
   transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
   pointer-events: none;
+  will-change: transform;
 }
 
 .floating-cta.visible {
+  -webkit-transform: translateY(0);
   transform: translateY(0);
   pointer-events: auto;
 }

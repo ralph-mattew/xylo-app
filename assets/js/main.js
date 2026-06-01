@@ -332,32 +332,31 @@
   };
   
   // ==========================================
-  // Floating Download CTA Bar
-  // ==========================================
-
-  const floatingCTA = document.getElementById('floating-cta');
-  if (floatingCTA) {
-    const heroSection = document.querySelector('.hero');
-    const footerSection = document.querySelector('.footer');
-
-    function updateFloatingCTA() {
-      if (!heroSection) return;
-      const heroBottom = heroSection.getBoundingClientRect().bottom;
-      const footerTop = footerSection ? footerSection.getBoundingClientRect().top : Infinity;
-      const show = heroBottom < 0 && footerTop > window.innerHeight;
-      floatingCTA.classList.toggle('visible', show);
-      floatingCTA.setAttribute('aria-hidden', String(!show));
-    }
-
-    window.addEventListener('scroll', updateFloatingCTA, { passive: true });
-    updateFloatingCTA();
-  }
-
-  // ==========================================
   // Initialize on DOM Load
   // ==========================================
-  
+
   document.addEventListener('DOMContentLoaded', () => {
+
+    // ── Floating Download CTA Bar ──
+    const floatingCTA = document.getElementById('floating-cta');
+    if (floatingCTA) {
+      const heroCTA = document.querySelector('.hero-cta-group') || document.querySelector('.hero');
+      const footerSection = document.querySelector('.footer');
+
+      function updateFloatingCTA() {
+        if (!heroCTA) return;
+        const triggerBottom = heroCTA.getBoundingClientRect().bottom;
+        const footerTop = footerSection ? footerSection.getBoundingClientRect().top : Infinity;
+        const show = triggerBottom < 0 && footerTop > window.innerHeight;
+        floatingCTA.classList.toggle('visible', show);
+        floatingCTA.setAttribute('aria-hidden', String(!show));
+      }
+
+      window.addEventListener('scroll', updateFloatingCTA, { passive: true });
+      window.addEventListener('resize', updateFloatingCTA, { passive: true });
+      updateFloatingCTA();
+    }
+    // ── End Floating CTA ──
     console.log('🎨 XYLO website loaded');
     
     // Add loaded class for animations
