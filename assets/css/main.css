@@ -2381,16 +2381,13 @@ h3, .step-card h3, .feature-card h3 {
 }
 
 .launch-banner-text {
-  display: flex;
-  align-items: center;
-  gap: 0.4rem;
   font-size: 0.9rem;
-  flex-wrap: wrap;
-  justify-content: center;
+  line-height: 1.4;
 }
 
 .launch-banner-text s {
   opacity: 0.65;
+  color: white;
 }
 
 .launch-countdown {
@@ -2473,6 +2470,11 @@ h3, .step-card h3, .feature-card h3 {
   text-align: center;
   padding: 3rem var(--spacing-xl) var(--spacing-xl);
   position: relative;
+  overflow: visible;
+}
+
+.launch-claim-step:hover {
+  transform: none;
 }
 
 .launch-claim-number {
@@ -2527,6 +2529,10 @@ h3, .step-card h3, .feature-card h3 {
   padding: var(--spacing-xl);
   border: 1px solid rgba(250, 204, 21, 0.25);
   background: rgba(250, 204, 21, 0.04);
+}
+
+.launch-claim-note:hover {
+  transform: none;
 }
 
 .launch-claim-note-icon {
