@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://xyloapp.com/sitemap.xml
+Sitemap: https://xylo.makata.ai/sitemap.xml

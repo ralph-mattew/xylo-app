@@ -145,7 +145,7 @@
                 Zero Data Collection
             </div>
             <h1>Privacy Policy</h1>
-            <p class="updated">Last Updated: May 20, 2026</p>
+            <p class="updated">Last Updated: June 1, 2026</p>
         </div>
     </div>
 
@@ -196,9 +196,10 @@
             <p>All features of XYLO operate entirely on your device:</p>
             <ul>
                 <li><strong>Document scanning</strong> uses Apple's Vision framework (on-device OCR)</li>
-                <li><strong>AI summarization</strong> uses a locally stored open-source model (Gemma 4 Edge) running via llama.cpp</li>
-                <li><strong>Document chat</strong> uses Apple's NLEmbedding for on-device semantic search and the same Gemma model for generating answers</li>
+                <li><strong>AI summarization & chat</strong> — On devices with 8 GB+ RAM, XYLO uses Apple Intelligence (FoundationModels framework) with no download required. On 6 GB devices, it uses Gemma 4 Edge (Google, Apache 2.0) running via llama.cpp, downloaded once during setup</li>
+                <li><strong>Semantic search</strong> uses Apple's NLEmbedding for on-device retrieval-augmented generation</li>
                 <li><strong>Document analysis</strong> uses Apple's NaturalLanguage framework for keyword extraction, sentiment analysis, and entity recognition</li>
+                <li><strong>Voice chat & audio recording</strong> use Apple's SFSpeechRecognizer and AVSpeechSynthesizer — all on-device</li>
             </ul>
             <p>No text, images, or analysis results are ever transmitted to any server, cloud service, or third party.</p>
         </div>
@@ -212,7 +213,7 @@
             <ul>
                 <li><strong>Analysis results</strong> stored in the app's local SwiftData database</li>
                 <li><strong>Source files</strong> stored in the app's local Documents directory</li>
-                <li><strong>AI models</strong> downloaded once from Hugging Face and stored locally</li>
+                <li><strong>AI models</strong> On 8 GB+ devices, Apple Intelligence is built in (no download). On 6 GB devices, the Gemma model is downloaded once from Hugging Face and stored locally</li>
                 <li><strong>User preferences</strong> stored in local UserDefaults</li>
                 <li><strong>Chat conversations</strong> stored in-memory during sessions, optionally persisted locally</li>
             </ul>
@@ -224,9 +225,11 @@
                 <span class="icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></span>
                 Network Usage
             </h2>
-            <p>The App makes network requests only for one purpose:</p>
+            <p>The App makes network requests only for these limited purposes:</p>
             <div class="highlight-card">
-                <p><strong>One-time AI model download</strong> — When you first set up the App, it downloads AI model files from Hugging Face (huggingface.co). This is the only network request the App ever makes. After download, no further network access is required.</p>
+                <p><strong>AI model download (6 GB devices only)</strong> — On devices with 6 GB RAM, the App downloads the Gemma 4 Edge model from Hugging Face during initial setup. Devices with 8 GB+ RAM use Apple Intelligence and require no download at all.</p>
+                <p style="margin-top: 0.75rem;"><strong>In-App Purchase (optional)</strong> — If you choose to upgrade to Lifetime Access, the App communicates with Apple's StoreKit servers to process the purchase. No personal data is shared with us.</p>
+                <p style="margin-top: 0.75rem;">No other network requests are made. No analytics, no telemetry, no tracking.</p>
             </div>
         </div>
 
@@ -243,7 +246,7 @@
                 <span class="icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="8.5" cy="7" r="4"/><path d="M20 8v6M23 11h-6"/></svg></span>
                 Third-Party Services
             </h2>
-            <p>The App does not integrate with any third-party analytics, advertising, or tracking services. The App does not contain ads. The only third-party interaction is the initial download of open-source AI models from Hugging Face.</p>
+            <p>The App does not integrate with any third-party analytics, advertising, or tracking services. The App does not contain ads. Third-party interactions are limited to: (1) a one-time AI model download from Hugging Face on 6 GB devices, and (2) Apple's StoreKit for optional in-app purchases.</p>
         </div>
 
         <div class="legal-section">
