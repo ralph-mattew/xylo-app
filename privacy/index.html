@@ -6,6 +6,9 @@
     <title>Privacy Policy — XYLO</title>
     <meta name="description" content="XYLO Privacy Policy. 100% on-device document intelligence — no data collection, no tracking, no cloud processing.">
     <meta name="theme-color" content="#8B5CF6">
+    <link rel="icon" type="image/png" sizes="32x32" href="../assets/img/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../assets/img/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="../assets/img/apple-touch-icon.png">
     <link rel="stylesheet" href="../assets/css/main.css">
     <style>
         .legal-hero {
@@ -120,16 +123,18 @@
 </head>
 <body>
     <!-- Navigation -->
-    <nav class="site-nav">
+    <nav class="site-nav" id="site-nav">
         <div class="nav-inner">
             <a href="../" class="nav-brand">
-                <svg class="nav-icon" width="32" height="32" viewBox="0 0 32 32" fill="none">
-                    <rect x="6" y="6" width="20" height="20" rx="6" fill="url(#lg)"/>
-                    <defs><linearGradient id="lg" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:#8B5CF6"/><stop offset="100%" style="stop-color:#FACC15"/></linearGradient></defs>
-                </svg>
+                <img src="../assets/img/app-icon.png" alt="XYLO" class="nav-icon" width="32" height="32">
                 XYLO
             </a>
-            <ul class="nav-links">
+            <button class="nav-toggle" aria-label="Menu" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-links" id="nav-links">
                 <li><a href="../">Home</a></li>
                 <li><a href="../support/">Support</a></li>
                 <li><a href="../terms/">Terms</a></li>
@@ -243,6 +248,14 @@
 
         <div class="legal-section">
             <h2>
+                <span class="icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/></svg></span>
+                Microphone Permission
+            </h2>
+            <p>Microphone is used for audio recording and voice chat. Audio is transcribed on-device using Apple's SFSpeechRecognizer with on-device recognition enabled. No audio data is uploaded, stored externally, or transmitted to any server. You can revoke microphone permissions at any time in your device's Settings.</p>
+        </div>
+
+        <div class="legal-section">
+            <h2>
                 <span class="icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="8.5" cy="7" r="4"/><path d="M20 8v6M23 11h-6"/></svg></span>
                 Third-Party Services
             </h2>
@@ -271,5 +284,7 @@
         <a href="../">Home</a> &middot; <a href="../terms/">Terms of Use</a> &middot; <a href="../support/">Support</a><br><br>
         Built by <a href="https://github.com/ralph-mattew" target="_blank" rel="noopener">Ralph Mattew Palomaria</a>
     </div>
+
+    <script src="../assets/js/main.js"></script>
 </body>
 </html>

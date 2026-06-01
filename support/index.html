@@ -6,6 +6,9 @@
     <title>Support & FAQ — XYLO</title>
     <meta name="description" content="Get help with XYLO. Device requirements, troubleshooting, FAQ, and contact information.">
     <meta name="theme-color" content="#8B5CF6">
+    <link rel="icon" type="image/png" sizes="32x32" href="../assets/img/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../assets/img/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="../assets/img/apple-touch-icon.png">
     <link rel="stylesheet" href="../assets/css/main.css">
     <style>
         .support-hero {
@@ -188,16 +191,18 @@
 </head>
 <body>
     <!-- Navigation -->
-    <nav class="site-nav">
+    <nav class="site-nav" id="site-nav">
         <div class="nav-inner">
             <a href="../" class="nav-brand">
-                <svg class="nav-icon" width="32" height="32" viewBox="0 0 32 32" fill="none">
-                    <rect x="6" y="6" width="20" height="20" rx="6" fill="url(#lg)"/>
-                    <defs><linearGradient id="lg" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:#8B5CF6"/><stop offset="100%" style="stop-color:#FACC15"/></linearGradient></defs>
-                </svg>
+                <img src="../assets/img/app-icon.png" alt="XYLO" class="nav-icon" width="32" height="32">
                 XYLO
             </a>
-            <ul class="nav-links">
+            <button class="nav-toggle" aria-label="Menu" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-links" id="nav-links">
                 <li><a href="../">Home</a></li>
                 <li><a href="../privacy/">Privacy</a></li>
                 <li><a href="../terms/">Terms</a></li>
@@ -320,7 +325,7 @@
                     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
                 </button>
                 <div class="faq-card-a">
-                    <p>XYLO is optimized for English documents and questions. The AI model and analysis pipeline are tuned for English text.</p>
+                    <p>XYLO is optimized for English documents and questions. The AI model and analysis pipeline are tuned for English text. Audio recording supports the device's default language for transcription.</p>
                 </div>
             </div>
         </div>
@@ -493,5 +498,7 @@
         <a href="../">Home</a> &middot; <a href="../privacy/">Privacy Policy</a> &middot; <a href="../terms/">Terms of Use</a><br><br>
         Built by <a href="https://github.com/ralph-mattew" target="_blank" rel="noopener">Ralph Mattew Palomaria</a>
     </div>
+
+    <script src="../assets/js/main.js"></script>
 </body>
 </html>

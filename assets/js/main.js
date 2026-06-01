@@ -358,7 +358,7 @@
   // ===============================================
   
   let currentSlide = 0;
-  const totalSlides = 7;
+  const totalSlides = 9;
 
   function initCarousel() {
     updateCarousel();
