@@ -1087,6 +1087,7 @@ strong {
   background: var(--xylo-card);
   border-top: 1px solid rgba(139, 92, 246, 0.1);
   padding: var(--spacing-xxxl) 0 var(--spacing-xl);
+  padding-bottom: 80px;
 }
 
 .footer-grid {
@@ -2612,3 +2613,108 @@ h3, .step-card h3, .feature-card h3 {
 }
 
 /* === END LAUNCH WEEK PROMO === */
+
+/* ============================================
+   Floating Download CTA Bar
+   ============================================ */
+
+.floating-cta {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 999;
+  transform: translateY(100%);
+  transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  pointer-events: none;
+}
+
+.floating-cta.visible {
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.floating-cta-inner {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 12px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  background: rgba(15, 15, 26, 0.92);
+  backdrop-filter: blur(24px) saturate(180%);
+  -webkit-backdrop-filter: blur(24px) saturate(180%);
+  border-top: 1px solid rgba(167, 139, 250, 0.2);
+  box-shadow: 0 -4px 24px rgba(0, 0, 0, 0.4);
+}
+
+.floating-cta-info {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-width: 0;
+}
+
+.floating-cta-icon {
+  border-radius: 8px;
+  flex-shrink: 0;
+  box-shadow: 0 2px 8px rgba(139, 92, 246, 0.3);
+}
+
+.floating-cta-text {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.floating-cta-text strong {
+  font-size: 0.95rem;
+  color: #E2E8F0;
+  opacity: 1;
+}
+
+.floating-cta-text span {
+  font-size: 0.75rem;
+  color: #9B99B8;
+  white-space: nowrap;
+}
+
+.floating-cta-btn {
+  display: inline-flex;
+  align-items: center;
+  padding: 10px 24px;
+  background: linear-gradient(135deg, #8B5CF6, #7C3AED);
+  color: white;
+  font-size: 0.9rem;
+  font-weight: 700;
+  border-radius: 50px;
+  text-decoration: none;
+  white-space: nowrap;
+  flex-shrink: 0;
+  transition: all 0.2s;
+  box-shadow: 0 4px 16px rgba(139, 92, 246, 0.3);
+}
+
+.floating-cta-btn:hover {
+  background: linear-gradient(135deg, #A78BFA, #8B5CF6);
+  box-shadow: 0 4px 20px rgba(139, 92, 246, 0.5);
+  transform: scale(1.03);
+}
+
+@media (min-width: 769px) {
+  .floating-cta-inner {
+    border-radius: 16px 16px 0 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .floating-cta-inner {
+    padding: 10px 16px;
+    padding-bottom: calc(10px + env(safe-area-inset-bottom, 0px));
+  }
+
+  .floating-cta-btn {
+    padding: 10px 20px;
+  }
+}
