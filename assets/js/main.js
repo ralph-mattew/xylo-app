@@ -455,5 +455,69 @@
   }
 
   window.playVideoDemo = playVideoDemo;
-  
+
+  // === LAUNCH WEEK PROMO (remove after June 8, 2026) ===
+
+  const LAUNCH_END = new Date('2026-06-08T00:00:00');
+
+  function updateCountdown() {
+    const diff = LAUNCH_END.getTime() - Date.now();
+    if (diff <= 0) {
+      const banner = document.getElementById('launch-banner');
+      if (banner) banner.classList.add('dismissed');
+      adjustNavForBanner();
+      return;
+    }
+    const d = Math.floor(diff / 86400000);
+    const h = Math.floor((diff % 86400000) / 3600000);
+    const m = Math.floor((diff % 3600000) / 60000);
+    const s = Math.floor((diff % 60000) / 1000);
+    const el = (id) => document.getElementById(id);
+    if (el('cd-days')) el('cd-days').textContent = d;
+    if (el('cd-hours')) el('cd-hours').textContent = String(h).padStart(2, '0');
+    if (el('cd-mins')) el('cd-mins').textContent = String(m).padStart(2, '0');
+    if (el('cd-secs')) el('cd-secs').textContent = String(s).padStart(2, '0');
+  }
+
+  function adjustNavForBanner() {
+    const banner = document.getElementById('launch-banner');
+    const nav = document.getElementById('site-nav');
+    if (!nav) return;
+    if (banner && !banner.classList.contains('dismissed')) {
+      nav.style.top = banner.offsetHeight + 'px';
+    } else {
+      nav.style.top = '0';
+    }
+  }
+
+  function initLaunchBanner() {
+    const banner = document.getElementById('launch-banner');
+    if (!banner) return;
+    if (sessionStorage.getItem('xylo-launch-dismissed') === '1') {
+      banner.classList.add('dismissed');
+      return;
+    }
+    if (Date.now() >= LAUNCH_END.getTime()) {
+      banner.classList.add('dismissed');
+      return;
+    }
+    adjustNavForBanner();
+    updateCountdown();
+    setInterval(updateCountdown, 1000);
+  }
+
+  window.dismissLaunchBanner = function() {
+    const banner = document.getElementById('launch-banner');
+    if (banner) {
+      banner.classList.add('dismissed');
+      sessionStorage.setItem('xylo-launch-dismissed', '1');
+      adjustNavForBanner();
+    }
+  };
+
+  window.addEventListener('resize', adjustNavForBanner);
+  document.addEventListener('DOMContentLoaded', initLaunchBanner);
+
+  // === END LAUNCH WEEK PROMO ===
+
 })();

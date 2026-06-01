@@ -2335,3 +2335,308 @@ h3, .step-card h3, .feature-card h3 {
     color: white !important;
   }
 }
+
+/* ===============================================
+   LAUNCH WEEK PROMO (remove after June 8, 2026)
+   =============================================== */
+
+.launch-banner {
+  position: sticky;
+  top: 0;
+  z-index: 1001;
+  background: linear-gradient(135deg, var(--xylo-primary), var(--xylo-primary-dark), var(--xylo-primary));
+  color: white;
+  padding: 10px 0;
+  text-align: center;
+  box-shadow: 0 2px 12px rgba(139, 92, 246, 0.3);
+}
+
+.launch-banner.dismissed {
+  display: none;
+}
+
+.launch-banner-inner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.25rem;
+  flex-wrap: wrap;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 var(--spacing-xl);
+}
+
+.launch-banner-badge {
+  display: inline-block;
+  padding: 3px 10px;
+  background: rgba(250, 204, 21, 0.25);
+  border: 1px solid rgba(250, 204, 21, 0.4);
+  border-radius: var(--radius-full);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--xylo-accent);
+  flex-shrink: 0;
+}
+
+.launch-banner-text {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.9rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.launch-banner-text s {
+  opacity: 0.65;
+}
+
+.launch-countdown {
+  display: flex;
+  gap: 0.35rem;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.countdown-unit {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 36px;
+  background: rgba(255, 255, 255, 0.12);
+  border-radius: var(--radius-sm);
+  padding: 4px 6px 2px;
+}
+
+.countdown-unit span {
+  font-size: 1.1rem;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  line-height: 1.2;
+}
+
+.countdown-unit small {
+  font-size: 0.55rem;
+  text-transform: uppercase;
+  opacity: 0.75;
+  letter-spacing: 0.05em;
+}
+
+.countdown-sep {
+  font-size: 1rem;
+  font-weight: 700;
+  opacity: 0.5;
+  line-height: 1;
+  margin-bottom: 8px;
+}
+
+.launch-banner-close {
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+  padding: 4px;
+  opacity: 0.7;
+  transition: opacity var(--transition-fast);
+  flex-shrink: 0;
+  line-height: 0;
+}
+
+.launch-banner-close:hover {
+  opacity: 1;
+}
+
+/* Hero micro-copy */
+.launch-hero-microcopy {
+  font-size: 0.95rem;
+  color: var(--xylo-accent);
+  margin-top: var(--spacing-lg);
+  font-weight: 500;
+  line-height: 1.6;
+}
+
+.launch-hero-microcopy strong {
+  font-weight: 700;
+}
+
+/* Claim discount section */
+.launch-claim-steps {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--spacing-xl);
+  margin-bottom: var(--spacing-xxl);
+}
+
+.launch-claim-step {
+  text-align: center;
+  padding: 3rem var(--spacing-xl) var(--spacing-xl);
+  position: relative;
+}
+
+.launch-claim-number {
+  position: absolute;
+  top: -18px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, var(--xylo-accent), var(--xylo-primary));
+  color: white;
+  border-radius: 50%;
+  font-weight: 700;
+  font-size: 1.25rem;
+  z-index: 1;
+  box-shadow: 0 4px 16px rgba(250, 204, 21, 0.3);
+}
+
+.launch-claim-icon {
+  width: 56px;
+  height: 56px;
+  margin: 0 auto var(--spacing-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--xylo-accent);
+}
+
+.launch-claim-step h3 {
+  margin-bottom: var(--spacing-sm);
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
+.launch-claim-step p {
+  opacity: 0.85;
+  line-height: 1.6;
+  font-size: 0.95rem;
+}
+
+.launch-claim-step s {
+  opacity: 0.6;
+}
+
+.launch-claim-note {
+  display: flex;
+  gap: var(--spacing-lg);
+  align-items: flex-start;
+  padding: var(--spacing-xl);
+  border: 1px solid rgba(250, 204, 21, 0.25);
+  background: rgba(250, 204, 21, 0.04);
+}
+
+.launch-claim-note-icon {
+  flex-shrink: 0;
+  color: var(--xylo-accent);
+  margin-top: 2px;
+}
+
+.launch-claim-note strong {
+  display: block;
+  margin-bottom: var(--spacing-sm);
+}
+
+.launch-claim-note p {
+  margin: 0;
+  opacity: 0.85;
+  line-height: 1.7;
+  font-size: 0.95rem;
+}
+
+/* Launch FAQ highlight */
+.launch-faq-highlight {
+  border: 2px solid var(--xylo-accent) !important;
+}
+
+/* Responsive: tablet */
+@media (max-width: 968px) {
+  .launch-claim-steps {
+    grid-template-columns: 1fr;
+    max-width: 480px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .launch-banner-inner {
+    gap: 0.75rem;
+    padding: 0 var(--spacing-md);
+  }
+
+  .launch-claim-note {
+    flex-direction: column;
+  }
+}
+
+/* Responsive: mobile */
+@media (max-width: 768px) {
+  .launch-banner-text {
+    font-size: 0.8rem;
+  }
+
+  .countdown-unit {
+    min-width: 30px;
+    padding: 3px 4px 1px;
+  }
+
+  .countdown-unit span {
+    font-size: 0.95rem;
+  }
+
+  .countdown-unit small {
+    font-size: 0.5rem;
+  }
+
+  .launch-hero-microcopy {
+    font-size: 0.85rem;
+  }
+}
+
+/* Responsive: small phone */
+@media (max-width: 640px) {
+  .launch-countdown {
+    gap: 0.25rem;
+  }
+
+  .countdown-unit {
+    min-width: 26px;
+  }
+
+  .launch-banner-badge {
+    display: none;
+  }
+}
+
+/* Light mode overrides */
+@media (prefers-color-scheme: light) {
+  .launch-banner {
+    background: linear-gradient(135deg, var(--xylo-primary-dark), var(--xylo-primary)) !important;
+    box-shadow: 0 2px 12px rgba(139, 92, 246, 0.2) !important;
+  }
+
+  .launch-hero-microcopy {
+    color: var(--xylo-primary) !important;
+  }
+
+  .launch-claim-note {
+    background: rgba(139, 92, 246, 0.04) !important;
+    border-color: rgba(139, 92, 246, 0.15) !important;
+  }
+
+  .launch-claim-icon {
+    color: var(--xylo-primary) !important;
+  }
+
+  .launch-claim-number {
+    box-shadow: 0 4px 16px rgba(139, 92, 246, 0.25) !important;
+  }
+
+  .launch-faq-highlight {
+    border-color: var(--xylo-primary) !important;
+  }
+}
+
+/* === END LAUNCH WEEK PROMO === */

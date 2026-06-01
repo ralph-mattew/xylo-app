@@ -3,15 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>XYLO — AI Document Intelligence | Chat with Your Documents</title>
-    <meta name="description" content="Scan documents, record audio, or upload files — then chat with your content by text or voice. AI summaries, cited answers, and smart extraction. 100% on-device for iPhone and iPad — no internet, no cloud, no data collection.">
+    <title>XYLO — AI Document Intelligence | 50% OFF Launch Week</title>
+    <meta name="description" content="Scan documents, record audio, or upload files — then chat with your content by text or voice. AI summaries, cited answers, and smart extraction. 100% on-device for iPhone and iPad. LAUNCH WEEK: Lifetime Access 50% OFF — $4.99 instead of $9.99 until June 8!">
     <meta name="keywords" content="document AI, document chat, PDF AI, on-device AI, privacy, offline AI, document analysis, RAG">
     <meta name="author" content="Ralph Mattew Palomaria">
     <link rel="canonical" href="https://xylo.makata.ai/">
 
     <!-- Open Graph -->
-    <meta property="og:title" content="XYLO — Chat with Your Documents">
-    <meta property="og:description" content="AI-powered document intelligence. Scan, understand, and ask questions—all on-device and private.">
+    <meta property="og:title" content="XYLO — Chat with Your Documents | 50% OFF Launch Week">
+    <meta property="og:description" content="AI-powered document intelligence. Scan, understand, and ask questions — all on-device and private. Launch week: Lifetime Access 50% OFF at $4.99!">
     <meta property="og:type" content="website">
     <meta property="og:image" content="https://xylo.makata.ai/assets/img/og-image.jpg">
     <meta property="og:image:width" content="1200">
@@ -22,8 +22,8 @@
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="XYLO — Chat with Your Documents">
-    <meta name="twitter:description" content="AI-powered document intelligence with on-device chat. Scan, understand, ask questions—100% private.">
+    <meta name="twitter:title" content="XYLO — Chat with Your Documents | 50% OFF Launch Week">
+    <meta name="twitter:description" content="AI-powered document intelligence with on-device chat. 100% private. Launch week: Lifetime Access 50% OFF at $4.99!">
     <meta name="twitter:image" content="https://xylo.makata.ai/assets/img/og-image.jpg">
 
     <!-- Theme & Icons -->
@@ -43,11 +43,22 @@
         "applicationCategory": "ProductivityApplication",
         "url": "https://xylo.makata.ai",
         "downloadUrl": "https://apps.apple.com/us/app/xylo-ai/id6771778565",
-        "offers": {
-            "@type": "Offer",
-            "price": "0",
-            "priceCurrency": "USD"
-        },
+        "offers": [
+            {
+                "@type": "Offer",
+                "price": "0",
+                "priceCurrency": "USD",
+                "description": "Free download with 3 free analyses"
+            },
+            {
+                "@type": "Offer",
+                "price": "4.99",
+                "priceCurrency": "USD",
+                "description": "Lifetime Access — Launch Week 50% OFF (regular $9.99)",
+                "priceValidUntil": "2026-06-08",
+                "availability": "https://schema.org/InStock"
+            }
+        ],
         "description": "AI document intelligence with on-device chat. Scan any document, get instant summaries, then ask questions—all offline and private.",
         "author": { "@type": "Person", "name": "Ralph Mattew Palomaria" },
         "featureList": "Document scanning, AI summary, document chat, voice chat, audio recording, RAG, on-device processing, offline mode, citation sources"
@@ -57,6 +68,29 @@
 <body>
     <div class="scroll-progress" id="scroll-progress" aria-hidden="true"></div>
     <a href="#features" class="skip-link">Skip to content</a>
+
+    <!-- LAUNCH WEEK PROMO START: Banner -->
+    <div class="launch-banner" id="launch-banner">
+        <div class="launch-banner-inner">
+            <span class="launch-banner-badge">LAUNCH WEEK</span>
+            <span class="launch-banner-text">
+                Lifetime Unlimited Access is <strong>50% OFF</strong> — <s>$9.99</s> <strong>$4.99</strong> until June 8!
+            </span>
+            <div class="launch-countdown" id="launch-countdown">
+                <div class="countdown-unit"><span id="cd-days">0</span><small>days</small></div>
+                <div class="countdown-sep">:</div>
+                <div class="countdown-unit"><span id="cd-hours">00</span><small>hrs</small></div>
+                <div class="countdown-sep">:</div>
+                <div class="countdown-unit"><span id="cd-mins">00</span><small>min</small></div>
+                <div class="countdown-sep">:</div>
+                <div class="countdown-unit"><span id="cd-secs">00</span><small>sec</small></div>
+            </div>
+            <button class="launch-banner-close" onclick="dismissLaunchBanner()" aria-label="Dismiss banner">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+            </button>
+        </div>
+    </div>
+    <!-- LAUNCH WEEK PROMO END: Banner -->
 
     <!-- Navigation -->
     <nav class="site-nav" id="site-nav">
@@ -115,6 +149,11 @@
                         Works in Airplane Mode
                     </div>
                 </div>
+                <!-- LAUNCH WEEK PROMO START: Hero micro-copy -->
+                <p class="launch-hero-microcopy">
+                    Get 3 uploads free. Unlock lifetime access for only <strong>$4.99</strong> this week.
+                </p>
+                <!-- LAUNCH WEEK PROMO END: Hero micro-copy -->
                 <div class="hero-stats">
                     <div class="stat-item">
                         <div class="stat-number">Free</div>
@@ -800,6 +839,63 @@
         </div>
     </section>
 
+<!-- LAUNCH WEEK PROMO START: Claim Discount Section -->
+    <section class="launch-claim section" id="launch-discount">
+        <div class="section-inner">
+            <div class="section-header">
+                <span class="section-badge">Launch Week Special</span>
+                <h2 class="section-title">How to Claim Your 50% Launch Discount</h2>
+                <p class="section-subtitle">The app's paywall shows $9.99, but Apple's checkout confirms the real launch price: <strong>$4.99</strong>. Here's exactly how it works.</p>
+            </div>
+            <div class="launch-claim-steps">
+                <div class="launch-claim-step glass-card">
+                    <div class="launch-claim-number">1</div>
+                    <div class="launch-claim-icon">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/>
+                            <polyline points="7 10 12 15 17 10"/>
+                            <line x1="12" y1="15" x2="12" y2="3"/>
+                        </svg>
+                    </div>
+                    <h3>Download XYLO Free</h3>
+                    <p>Install from the App Store. Try 3 full analyses free — no payment needed.</p>
+                </div>
+                <div class="launch-claim-step glass-card">
+                    <div class="launch-claim-number">2</div>
+                    <div class="launch-claim-icon">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
+                            <path d="M7 11V7a5 5 0 0 1 9.9-1"/>
+                        </svg>
+                    </div>
+                    <h3>Tap "Unlock Lifetime Access"</h3>
+                    <p>The paywall screen shows <s>$9.99</s> — this is a display lag. The real price is lower.</p>
+                </div>
+                <div class="launch-claim-step glass-card">
+                    <div class="launch-claim-number">3</div>
+                    <div class="launch-claim-icon">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M22 11.08V12a10 10 0 11-5.93-9.14"/>
+                            <polyline points="22 4 12 14.01 9 11.01"/>
+                        </svg>
+                    </div>
+                    <h3>Apple Confirms $4.99</h3>
+                    <p>Apple's official checkout shows the correct launch price: <strong>$4.99</strong>. That's what you pay.</p>
+                </div>
+            </div>
+            <div class="launch-claim-note glass-card">
+                <div class="launch-claim-note-icon">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+                </div>
+                <div>
+                    <strong>Why the price mismatch?</strong>
+                    <p>We prioritized app stability over a rushed code deployment. The app's paywall text is hard-coded at $9.99. Apple's StoreKit dynamically applies the promotional $4.99 price. The price you see at Apple's confirmation dialog is always the price you pay. This offer ends June 8, 2026.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- LAUNCH WEEK PROMO END: Claim Discount Section -->
+
 <!-- Built For Professionals -->
     <section class="testimonials section">
         <div class="section-inner">
@@ -1027,6 +1123,19 @@
                 <h2 class="section-title">Frequently Asked Questions</h2>
             </div>
             <div class="faq-grid">
+                <!-- LAUNCH WEEK PROMO START: FAQ -->
+                <div class="faq-item glass-card faq-accordion launch-faq-highlight">
+                    <button class="faq-question" onclick="toggleFAQ(this)">
+                        <span>Why does the app show $9.99 but Apple charges $4.99?</span>
+                        <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="6 9 12 15 18 9"/>
+                        </svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p>During launch week (until June 8, 2026), Lifetime Access is 50% off at $4.99. The app's paywall text is hard-coded and still displays the regular $9.99 price. However, when you proceed to purchase, Apple's StoreKit checkout dialog shows the correct $4.99 price — that's the amount you'll be charged. The Apple checkout price is always authoritative.</p>
+                    </div>
+                </div>
+                <!-- LAUNCH WEEK PROMO END: FAQ -->
                 <div class="faq-item glass-card faq-accordion">
                     <button class="faq-question" onclick="toggleFAQ(this)">
                         <span>How does document chat work offline?</span>
