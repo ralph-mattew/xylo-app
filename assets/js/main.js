@@ -80,10 +80,9 @@
     const spacing = 52;
     const lineWidth = 0.5;
     
-    // Check for dark mode
-    const isDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-    const color = isDark ? 'rgba(167, 139, 250, 0.025)' : 'rgba(139, 92, 246, 0.025)';
-    const dotColor = isDark ? 'rgba(167, 139, 250, 0.0375)' : 'rgba(139, 92, 246, 0.0375)';
+    // Always dark mode
+    const color = 'rgba(167, 139, 250, 0.025)';
+    const dotColor = 'rgba(167, 139, 250, 0.0375)';
     
     ctx.strokeStyle = color;
     ctx.lineWidth = lineWidth;
@@ -123,8 +122,7 @@
   window.addEventListener('load', drawDiagonalPattern);
   window.addEventListener('resize', drawDiagonalPattern);
   
-  // Redraw on color scheme change
-  window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', drawDiagonalPattern);
+  // No color scheme listener needed — always dark
   
   // ==========================================
   // Chat Demo Interactive
