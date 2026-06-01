@@ -2190,3 +2190,148 @@ h3, .step-card h3, .feature-card h3 {
     grid-template-columns: 1fr !important;
   }
 }
+
+/* ===============================================
+   AUDIO RECORDING SECTION - Mobile Override
+   =============================================== */
+
+@media (max-width: 968px) {
+  .audio-recording > .section-inner > div[style*="grid-template-columns"] {
+    grid-template-columns: 1fr !important;
+    gap: 2rem !important;
+  }
+
+  .audio-recording .mockup-showcase {
+    order: -1;
+    max-width: 300px !important;
+  }
+}
+
+/* ===============================================
+   LIGHT MODE SUPPORT
+   Override inline rgba(255,255,255,...) colors
+   that are invisible on light backgrounds
+   =============================================== */
+
+@media (prefers-color-scheme: light) {
+  /* Section backgrounds: replace dark gradients with light-appropriate ones */
+  .before-after {
+    background: linear-gradient(180deg, rgba(243, 241, 250, 0.5), rgba(139, 92, 246, 0.05)) !important;
+  }
+
+  .audio-recording {
+    background: linear-gradient(180deg, rgba(243, 241, 250, 0), rgba(139, 92, 246, 0.05)) !important;
+  }
+
+  .ipad-showcase {
+    background: linear-gradient(180deg, rgba(250, 204, 21, 0.03), rgba(243, 241, 250, 0)) !important;
+  }
+
+  .chat-deepdive {
+    background: linear-gradient(180deg, rgba(139, 92, 246, 0.05), rgba(243, 241, 250, 0)) !important;
+  }
+
+  /* Fix text colors in sections with inline styles */
+  .audio-recording h2,
+  .audio-recording h4,
+  .chat-deepdive h3,
+  .privacy-section h3,
+  .privacy-section h4 {
+    color: var(--xylo-text) !important;
+  }
+
+  .audio-recording p,
+  .chat-deepdive p,
+  .chat-deepdive span,
+  .privacy-section p,
+  .privacy-section span {
+    color: var(--xylo-text) !important;
+    opacity: 0.85;
+  }
+
+  /* Fix comparison lists in before/after section */
+  .comparison-list li {
+    color: var(--xylo-text) !important;
+    opacity: 0.9;
+  }
+
+  .comparison-label {
+    color: var(--xylo-text) !important;
+  }
+
+  /* Screenshot info text */
+  .screenshot-info h3 {
+    color: var(--xylo-text) !important;
+  }
+
+  .screenshot-info p {
+    color: var(--xylo-text-secondary) !important;
+  }
+
+  /* Carousel buttons */
+  .carousel-btn {
+    background: rgba(139, 92, 246, 0.1);
+    color: var(--xylo-text);
+    border-color: rgba(139, 92, 246, 0.2);
+  }
+
+  .carousel-dot {
+    background: rgba(139, 92, 246, 0.2);
+  }
+
+  /* Screenshot device frame */
+  .screenshot-device {
+    background: linear-gradient(135deg, rgba(30, 27, 46, 0.95), rgba(50, 47, 65, 0.9));
+  }
+
+  /* Hardware requirements - fix text on light background */
+  .hardware-requirements .glass-card p,
+  .hardware-requirements .glass-card strong {
+    color: var(--xylo-text) !important;
+  }
+
+  .hardware-requirements div[style*="background: rgba(139, 92, 246, 0.1)"] p,
+  .hardware-requirements div[style*="background: rgba(250, 204, 21"] p {
+    color: var(--xylo-text) !important;
+    opacity: 0.8;
+  }
+
+  /* Privacy comparison columns */
+  .comparison-column.comparison-bad li,
+  .comparison-column.comparison-good li {
+    color: var(--xylo-text) !important;
+  }
+
+  /* Privacy verified box */
+  .privacy-section div[style*="background: rgba(16, 185, 129, 0.1)"] p {
+    color: var(--xylo-text) !important;
+    opacity: 0.9;
+  }
+
+  /* Chat deepdive example queries */
+  .chat-deepdive div[style*="border-left: 3px solid #8B5CF6"] p {
+    color: var(--xylo-text) !important;
+  }
+
+  /* iPad showcase images - softer shadow for light mode */
+  .ipad-showcase div[style*="box-shadow"] {
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15) !important;
+  }
+
+  /* Feature icons in audio recording section */
+  .audio-recording div[style*="background: rgba(139, 92, 246, 0.2)"] {
+    background: rgba(139, 92, 246, 0.12) !important;
+  }
+
+  /* Trust strip text stays white on gradient bg */
+  .trust-text,
+  .trust-text strong {
+    color: white !important;
+  }
+
+  /* CTA section text stays white on gradient bg */
+  .cta-content h2,
+  .cta-content p {
+    color: white !important;
+  }
+}
